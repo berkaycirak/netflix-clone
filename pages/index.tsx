@@ -1,9 +1,7 @@
-import styles from '@/styles/Home.module.css';
-
 export default function Home() {
 	return (
 		<>
-			<main></main>
+			<h1 className='text-red-400'>Netflix</h1>
 		</>
 	);
 }
