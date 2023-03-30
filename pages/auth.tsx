@@ -5,7 +5,6 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 function Auth() {
-	const router = useRouter();
 	const [email, setEmail] = useState('');
 	const [name, setName] = useState('');
 	const [password, setPassword] = useState('');
@@ -24,15 +23,12 @@ function Auth() {
 			await signIn('credentials', {
 				email,
 				password,
-				redirect: false,
-				callbackUrl: '/',
+				callbackUrl: '/profiles',
 			});
-
-			router.push('/');
 		} catch (error) {
 			console.log(error);
 		}
-	}, [email, password, router]);
+	}, [email, password]);
 
 	// register function to create a user
 	const register = useCallback(async () => {
